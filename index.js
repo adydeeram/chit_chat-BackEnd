@@ -19,7 +19,7 @@ app.post("/signup", async (req, res) => {
     const r = await axios.post(
       "https://api.chatengine.io/users/",
       { username, secret, email, first_name, last_name },
-      { headers: { "Private-Key": process.env.CHAT_ENGINE_PRIVATE_KEY } }
+      { headers: { "Private-Key": '39b0c5c7-f04a-4f2b-9cfd-9c55d4fb2b28' } }
     );
     return res.status(r.status).json(r.data);
   } catch (e) {
@@ -37,7 +37,7 @@ app.post("/login", async (req, res) => {
   try {
     const r = await axios.get("https://api.chatengine.io/users/me/", {
       headers: {
-        "Project-ID": process.env.CHAT_ENGINE_PROJECT_ID,
+        "Project-ID": '7e15da66-c751-44be-8aa9-47bb9c4cf9f6',
         "User-Name": username,
         "User-Secret": secret,
       },
